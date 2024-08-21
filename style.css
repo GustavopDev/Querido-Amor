@@ -1,0 +1,557 @@
+body{
+    background-image: url("/imagens/plano\ de\ fundo1.jpg");
+}
+
+:root {
+    ---cor-de-fundo: #FFC5C5;
+    --cor-titulo:rgb(128,0,0);
+    --cor-do-paragrafo : #000000;
+    --cor-da-borda: #FF0000;
+
+    --fonte-timmana: 'Timmana', sans-serif;
+}
+
+/* Titulo ---------------------------------------- */
+.container-titulo {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 5em;
+  font-family: var(--fonte-timmana);
+  padding: 0;
+  width: 100%; 
+}
+
+.titulo {
+  display: flex;
+  margin: 5em 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Garante que o título ocupe toda a largura disponível */
+}
+
+.titulo img {
+  width: 250px; /* Mantém a imagem em tamanho fixo */
+  animation: mover 5s ease-in-out infinite;
+}
+
+.titulo-texto {
+  padding: 2em;
+  max-width: 100%; /* Garante que o texto se ajuste ao contêiner */
+}
+
+.titulo-texto h1 {
+  font-size: 80px; /* Mantém o tamanho do texto */
+  padding: 1em 0 0 0;
+  color: var(--cor-titulo);
+}
+
+.titulo-texto h3 {
+  font-size: 50px; /* Mantém o tamanho do texto */
+  color: var(--cor-titulo);
+}
+
+@media (max-width: 1200px) {
+  .titulo img {
+    width: 180px; /* Diminui o tamanho da imagem */
+  }
+
+  .titulo-texto h1 {
+    font-size: 60px; /* Diminui o tamanho do título principal */
+  }
+
+  .titulo-texto h3 {
+    font-size: 40px; /* Diminui o tamanho do subtítulo */
+  }
+}
+
+@media (max-width: 900px) {
+  .titulo img {
+    width: 140px; /* Diminui mais o tamanho da imagem */
+  }
+
+  .titulo-texto h1 {
+    font-size: 45px; /* Diminui mais o tamanho do título principal */
+  }
+
+  .titulo-texto h3 {
+    font-size: 30px; /* Diminui mais o tamanho do subtítulo */
+  }
+  .container-titulo {
+    margin-bottom: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .titulo {
+    margin: 1em 0;
+  }
+
+  .titulo img {
+    width: 100px; /* Diminui mais o tamanho da imagem */
+  }
+
+  .titulo-texto h1 {
+    font-size: 40px; /* Diminui mais o tamanho do título principal */
+  }
+
+  .titulo-texto h3 {
+    font-size: 25px; /* Diminui mais o tamanho do subtítulo */
+  }
+  .container-titulo {
+    margin-bottom: 1em;
+  }
+}
+
+@media (max-width: 500px) {
+  .titulo-texto {
+    padding: 1em;
+  }
+
+  .titulo {
+    margin: 0 0 1em 0;
+  }
+
+  .titulo img {
+    width: 50px; /* Diminui mais o tamanho da imagem */
+  }
+
+  .titulo-texto h1 {
+    font-size: 35px; /* Diminui mais o tamanho do título principal */
+  }
+
+  .titulo-texto h3 {
+    font-size: 22px; /* Diminui mais o tamanho do subtítulo */
+  }
+}
+
+
+
+
+
+
+
+/* Foto-Texto ---------------------------------------- */
+.container-fotos-texto {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 5em;
+  font-family: var(--fonte-timmana);
+  position: relative; /* Adiciona para conter elementos absolutos */
+  width: 80%; /* Define uma largura máxima */
+  max-width: 1200px; /* Limita a largura máxima do contêiner */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fotos-texto {
+  display: flex;
+  width: 100%; /* Use 100% para ocupar toda a largura do contêiner */
+  font-size: 30px;
+  letter-spacing: 0.1em;
+  position: relative;
+  justify-content: center;
+}
+
+.foto {
+  padding: 0 1em;
+  position: relative;
+}
+
+.foto img {
+  width: 330px;
+  border-radius: 10px;
+}
+
+.floating-img1,
+.floating-img2,
+.floating-img3,
+.floating-img4 {
+  position: absolute;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.floating-img1 {
+  bottom: 200px; /* Ajuste conforme necessário */
+  left: calc(50% + 200px); /* Centraliza e ajusta à direita */
+  width: 400px;
+}
+
+.floating-img2 {
+  top: 120px; /* Ajuste conforme necessário */
+  right: calc(50% + 190px); /* Centraliza e ajusta à esquerda */
+  width: 450px;
+}
+
+.floating-img3 {
+  bottom: 350px; /* Ajuste conforme necessário */
+  left: calc(50% + 250px); /* Centraliza e ajusta à direita */
+  width: 250px;
+  transform: rotate(20deg);
+}
+
+.floating-img4 {
+  bottom: 200px; /* Ajuste conforme necessário */
+  right: calc(50% + 150px); /* Centraliza e ajusta à esquerda */
+  width: 460px;
+}
+
+.texto {
+  padding: 2em 0;
+  color: rgb(148, 0, 0);
+  width: 20em;
+  height: 10em;
+}
+
+
+@keyframes mover {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .floating-img1, .floating-img2, .floating-img3, .floating-img4 {
+    animation: mover 3s ease-in-out infinite;
+  }
+
+  @media (max-width: 1200px) {
+    .fotos-texto {
+      font-size: 25px; /* Diminui o tamanho do texto */
+    }
+  
+    .foto img {
+      width: 280px; /* Diminui o tamanho das imagens principais */
+    }
+  
+    .floating-img1,
+    .floating-img2,
+    .floating-img3,
+    .floating-img4 {
+      width: 230px; /* Diminui o tamanho das imagens flutuantes */
+    }
+
+    .floating-img2 {
+      width: 280px; /* Ajusta a imagem flutuante 3 individualmente */
+      top: 150px; /* Ajuste conforme necessário */
+      right: calc(50% + 220px); /* Centraliza e ajusta à esquerda */
+    }
+  
+    .floating-img3 {
+      width: 180px; /* Ajusta a imagem flutuante 3 individualmente */
+      bottom: 250px; /* Ajuste conforme necessário */
+    }
+  
+    .floating-img4 {
+      width: 320px; /* Ajusta a imagem flutuante 4 individualmente */
+      bottom: 200px; /* Ajuste conforme necessário */
+      right: calc(50% + 180px); /* Centraliza e ajusta à esquerda */
+    }
+  }
+
+  @media (max-width: 900px) {
+    .fotos-texto {
+      font-size: 22px; /* Diminui o tamanho do texto */
+    }
+  
+    .foto img {
+      width: 240px; /* Diminui o tamanho das imagens principais */
+    }
+  
+    .floating-img1 {
+      width: 180px; /* Diminui o tamanho das imagens flutuantes */
+      bottom: 200px; /* Ajuste conforme necessário */
+      left: calc(50% + 200px); /* Centraliza e ajusta à direita */
+    }
+
+    .floating-img2 {
+      width: 270px; /* Ajusta a imagem flutuante 3 individualmente */
+      top: 120px; /* Ajuste conforme necessário */
+      right: calc(50% + 170px); /* Centraliza e ajusta à esquerda */
+    }
+  
+    .floating-img3 {
+      width: 150px; /* Ajusta a imagem flutuante 3 individualmente */
+      bottom: 220px; /* Ajuste conforme necessário */
+      left: calc(50% + 230px); /* Centraliza e ajusta à direita */
+    }
+  
+    .floating-img4 {
+      width: 250px; /* Ajusta a imagem flutuante 4 individualmente */
+      bottom: 180px; /* Ajuste conforme necessário */
+      right: calc(50% + 140px); /* Centraliza e ajusta à esquerda */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container-fotos-texto {
+      margin-bottom: 2em;
+    }
+
+    .fotos-texto {
+      font-size: 14px; /* Diminui o tamanho do texto */
+    }
+  
+    .foto img {
+      width: 140px; /* Diminui o tamanho das imagens principais */
+    }
+  
+    .floating-img1 {
+      width: 100px; /* Diminui o tamanho das imagens flutuantes */
+      bottom: 150px; /* Ajuste conforme necessário */
+      left: calc(50% + 130px); /* Centraliza e ajusta à direita */
+    }
+
+    .floating-img2 {
+      width: 160px; /* Ajusta a imagem flutuante 3 individualmente */
+      top: 50px; /* Ajuste conforme necessário */
+      right: calc(50% + 100px); /* Centraliza e ajusta à esquerda */
+    }
+  
+    .floating-img3 {
+      width: 80px; /* Ajusta a imagem flutuante 3 individualmente */
+      bottom: 150px; /* Ajuste conforme necessário */
+      left: calc(50% + 140px); /* Centraliza e ajusta à direita */
+    }
+  
+    .floating-img4 {
+      width: 150px; /* Ajusta a imagem flutuante 4 individualmente */
+      bottom: 130px; /* Ajuste conforme necessário */
+      right: calc(50% + 100px); /* Centraliza e ajusta à esquerda */
+    }
+  }
+
+  @media (max-width: 500px) {
+    .container-fotos-texto {
+        flex-direction: column; /* Organiza o conteúdo em coluna */
+        align-items: center; /* Centraliza o conteúdo */
+        width: 100%; /* Ajusta a largura para ocupar toda a tela */
+        max-width: none; /* Remove o limite de largura máxima */
+    }
+
+    .fotos-texto {
+        font-size: 11px; /* Diminui o tamanho do texto */
+        display: flex;
+        flex-direction: column; /* Garante que a imagem fique acima do texto */
+        text-align: center;
+        width: 60%; /* Use 100% para ocupar toda a largura do contêiner */
+    }
+
+    .foto {
+        padding: 0; /* Remove o espaçamento lateral */
+        margin-bottom: 0em; /* Adiciona espaçamento abaixo da imagem */
+        order: -1; /* Garante que a imagem fique sempre acima do texto */
+    }
+
+    .foto img {
+        width: 100%; /* A imagem ocupa toda a largura disponível */
+        max-width: 200px; /* Define um tamanho máximo para a imagem */
+    }
+
+    .texto {
+      padding: 1em 0;
+      width: auto;
+      height: auto;
+    }
+
+    .floating-img1 {
+      width: 120px; /* Diminui o tamanho das imagens flutuantes */
+      bottom: 280px; /* Ajuste conforme necessário */
+      left: calc(50% + 10px); /* Centraliza e ajusta à direita */
+    }
+
+    .floating-img2 {
+      width: 190px; /* Ajusta a imagem flutuante 3 individualmente */
+      top: 80px; /* Ajuste conforme necessário */
+      right: calc(43% + 1px); /* Centraliza e ajusta à esquerda */
+    }
+  
+    .floating-img3 {
+      width: 90px; /* Ajusta a imagem flutuante 3 individualmente */
+      bottom: 340px; /* Ajuste conforme necessário */
+      left: calc(50% + 35px); /* Centraliza e ajusta à direita */
+    }
+  
+    .floating-img4 {
+      width: 160px; /* Ajusta a imagem flutuante 4 individualmente */
+      bottom: 260px; /* Ajuste conforme necessário */
+      right: calc(40% + 1px); /* Centraliza e ajusta à esquerda */
+    }
+}
+
+
+
+
+
+
+
+
+/* Momentos idiotas ---------------------------------------- */
+.container-momentos-idiotas{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 10em 0;
+    font-family: var(--fonte-timmana);
+}
+
+.texto-momentos-idiotas{
+    font-size: 50px;
+    padding-bottom: 1em;
+    color: var(--cor-titulo);
+}
+
+.fotos-momentos-idiotas img{
+    width: 250px;
+    padding: 0 1em;
+}
+
+@media (max-width: 1200px) {
+  .fotos-momentos-idiotas img {
+      width: 10em; 
+  }
+  .texto-momentos-idiotas{
+    font-size: 35px;
+}
+}
+
+@media (max-width: 900px) {
+  .fotos-momentos-idiotas img {
+      width: 8em; 
+  }
+  .texto-momentos-idiotas{
+    font-size: 30px;
+}
+}
+
+@media (max-width: 768px) {
+  .fotos-momentos-idiotas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Cria duas colunas iguais */
+    gap: 30px; /* Espaçamento entre as imagens */
+    justify-items: center; /* Centraliza as imagens em cada coluna */
+  }
+
+  .fotos-momentos-idiotas img {
+    width: 170px; /* Ajusta a largura da imagem para ocupar toda a coluna */
+    max-width: 160px; /* Define um tamanho máximo para as imagens */
+    padding: 0;
+  }
+  .texto-momentos-idiotas{
+    font-size: 25px;
+  }
+  .container-momentos-idiotas{
+    margin: 5em 0;
+  }
+
+  @media (max-width: 500px) {
+    .fotos-momentos-idiotas img {
+      width: 120px; /* Ajusta a largura da imagem para ocupar toda a coluna */
+      padding: 0;
+    }
+    .texto-momentos-idiotas{
+      font-size: 17px;
+    }
+    .container-momentos-idiotas{
+      margin: 3em 0;
+    }
+  }
+  
+}
+
+
+
+
+
+
+/* Ultima foto ---------------------------------------- */
+.container-ultima-foto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 12em 0 5em 0;
+  font-family: var(--fonte-timmana);
+}
+
+.ultima-foto {
+  width: 40%;
+}
+
+.ultima-foto img {
+  width: 500px;
+  padding-bottom: 2em;
+}
+
+.ultima-foto p {
+  font-size: 30px;
+  letter-spacing: 0.1em;
+  color: rgb(148, 0, 0);
+}
+
+.icones img {
+  width: 400px;
+  animation: mover 4s ease-in-out infinite;
+}
+
+@media (max-width: 1200px) {
+  .ultima-foto img {
+      width: 350px; /* Diminui a largura da imagem */
+  }
+  .icones img {
+      width: 250px; /* Diminui a largura dos ícones */
+  }
+}
+
+@media (max-width: 900px) {
+  .ultima-foto img {
+      width: 300px; /* Diminui mais a largura da imagem */
+  }
+  .icones img {
+      width: 200px; /* Diminui mais a largura dos ícones */
+  }
+  .ultima-foto p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-ultima-foto {
+    margin: 3em 0 1em 0;
+    width: 100%;
+  }
+
+  .ultima-foto {
+    width: 60%;
+  }
+
+  .ultima-foto img {
+    width: 300px; /* Diminui mais a largura da imagem */
+  }
+
+  .ultima-foto p {
+    font-size: 14px;
+  }
+  
+  .icones img {
+  display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .ultima-foto img {
+    width: 200px; /* Diminui mais a largura da imagem */
+    padding: 0 0 0.8em 0;
+  }
+  .ultima-foto p {
+    font-size: 11px;
+  }
+}
